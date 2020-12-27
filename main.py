@@ -50,7 +50,7 @@ def cronjob():
         )
 
         aws_client.publish(
-            TargetArn='arn:aws:sns:us-west-2:501654311509:pen_swap',
+            TargetArn=os.environ.get('AWS_SNS_TOPIC_ARN'),
             Message=message,
             Subject='New r/pen_swap posts'
         )
