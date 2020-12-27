@@ -32,7 +32,7 @@ def cronjob():
     current_timestamp = datetime.now()
     for submission in reddit.subreddit("pen_swap").new(limit=10):
         age_of_post_in_seconds = (current_timestamp - datetime.fromtimestamp(submission.created_utc)).seconds
-        if age_of_post_in_seconds < 50000 and 'WTS' in submission.title:
+        if age_of_post_in_seconds < 360 and 'WTS' in submission.title:
             submission_list.append(submission)
 
     # build msg to text
